@@ -88,11 +88,14 @@ jobs:
           make
           ./src/calculator car 5
 
-  Deployment:
-    runs-on: ubuntu-latest
-    needs:
-      - Test_Add
-      - Test_sub
-      - Test_mul
-      - Test_div
-      - Test_car
+Deployment:
+  runs-on: ubuntu-latest
+  needs:
+    - Test_Add
+    - Test_sub
+    - Test_mul
+    - Test_div
+    - Test_car
+  steps:
+    - name: Déploiement
+      run: echo "Déploiement de la solution"
